@@ -52,7 +52,7 @@ ollama list
 
 ### Install LiteLLM
 
-[](https://docs.litellm.ai/docs/proxy/quick_start)
+[LiteLLM Proxy Quick Start](https://docs.litellm.ai/docs/proxy/quick_start)
 
 ```bash
 pip install litellm[proxy]
@@ -82,7 +82,7 @@ cd web & npm install
 npm run dev
 ```
 
-Open the browser and visit [](http://localhost:3000)
+Open the browser and visit [http://localhost:3000](http://localhost:3000)
 
 Set the Database/Sqlite path to DB-GPT-Lite/pilot/data/default_sqlite.db and start a new chat from "Chat Data"
 
