@@ -114,7 +114,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+#.env
 .venv
 env/
 venv/
@@ -174,7 +174,7 @@ thirdparty
 
 # local env files
 /web/.env.prod
-/web/.env
+#/web/.env
 
 # typescript
 *.tsbuildinfo

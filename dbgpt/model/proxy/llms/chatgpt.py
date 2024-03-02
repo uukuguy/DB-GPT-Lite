@@ -76,6 +76,7 @@ class OpenAILLMClient(ProxyLLMClient):
         api_base: Optional[str] = None,
         api_type: Optional[str] = None,
         api_version: Optional[str] = None,
+        # FIXME
         model: Optional[str] = None,
         proxies: Optional["ProxiesTypes"] = None,
         timeout: Optional[int] = 240,
@@ -103,6 +104,9 @@ class OpenAILLMClient(ProxyLLMClient):
             full_url=kwargs.get("full_url"),
         )
 
+        # FIXME
+        print(f"OpenAILLMClient: {model=}")
+        # self._model = "deepseek-coder-7b-instruct-v1.5:Q4_K_M" #model
         self._model = model
         self._proxies = proxies
         self._timeout = timeout
@@ -152,6 +156,7 @@ class OpenAILLMClient(ProxyLLMClient):
 
     @property
     def default_model(self) -> str:
+        # FIXME
         model = self._model
         if not model:
             model = "gpt-35-turbo" if self._api_type == "azure" else "gpt-3.5-turbo"

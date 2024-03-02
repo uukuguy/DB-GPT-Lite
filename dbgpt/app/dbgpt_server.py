@@ -153,7 +153,9 @@ def initialize_app(param: WebServerParameters = None, args: List[str] = None):
     print(param)
 
     embedding_model_name = CFG.EMBEDDING_MODEL
+    print(f"{embedding_model_name=}")
     embedding_model_path = EMBEDDING_MODEL_CONFIG[CFG.EMBEDDING_MODEL]
+    print(f"{embedding_model_path=}")
 
     server_init(param, system_app)
     mount_routers(app)

@@ -1,5 +1,56 @@
+# DB-GPT-Lite
+
+DB-GPT lightweight version, baseline framework for modular development of local large language model applications.
+
+## Quick Start
+
+Set environment variables OPENAI_API_BASE and OPENAI_API_KEY.
+
+```bash
+export OPENAI_API_BASE="http://localhost:5001/v1"
+export OPENAI_API_KEY="sk-xxxxx"
+```
+
+### Install
+
+```bash
+git clone https://github.com/uukuguy/DB-GPT-Lite.git && cd DB-GPT_Lite
+pip install -v -e ".[openai]"
+```
+
+### Prepare Models
+
+```bash
+cd DB-GPT-Lite
+mkdir -p models && cd models
+git clone https://huggingface.co/GanymedeNil/text2vec-large-chinese
+git clone https://huggingface.co/moka-ai/m3e-large
+git clone https://huggingface.co/lmsys/vicuna-13b-v1.5
+```
+
+### Prepare Data
+
+```bash
+cd DB-GPT-Lite
+bash scripts/examples/load_examples.sh
+```
+
+### Run Service
+
+```bash
+python dbgpt/app/dbgpt_server.py --port 15000
+```
+
+### Visit Website
+
+```bash
+cd web & npm install
+npm run dev
+```
+
+Open the browser and visit http://localhost:3000
+
 # DB-GPT: Revolutionizing Database Interactions with Private LLM Technology
- 
 <p align="left">
   <img src="./assets/LOGO.png" width="100%" />
 </p>
