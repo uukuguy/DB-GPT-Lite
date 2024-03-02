@@ -24,8 +24,42 @@ pip install -v -e ".[openai]"
 cd DB-GPT-Lite
 mkdir -p models && cd models
 git clone https://huggingface.co/GanymedeNil/text2vec-large-chinese
-git clone https://huggingface.co/moka-ai/m3e-large
+#git clone https://huggingface.co/moka-ai/m3e-large
 git clone https://huggingface.co/lmsys/vicuna-13b-v1.5
+
+wget https://huggingface.co/LoneStriker/deepseek-coder-7b-instruct-v1.5-GGUF/resolve/main/deepseek-coder-7b-instruct-v1.5-Q5_K_M.gguf?download=true -O deepseek-coder-7b-instruct-v1.5-Q5_K_M.gguf
+```
+
+### Install Ollama
+
+Install [ollama](https://github.com/ollama/ollama) and run `ollama serve`
+
+Ollama supports importing GGUF models in the Modelfile:
+
+Create a file named Modelfile, with a FROM instruction with the local filepath to the model you want to import.
+
+```text
+FROM DB-GPT-Lite/models/deepseek-coder-7b-instruct-v1.5-Q5_K_M.gguf
+```
+
+Create the model in Ollama
+
+```bash
+ollama create deepseek-coder-7b-instruct-v1.5:Q5_K_M -f Modelfile
+
+ollama list
+```
+
+### Install LiteLLM
+
+[](https://docs.litellm.ai/docs/proxy/quick_start)
+
+```bash
+pip install litellm[proxy]
+```
+
+```bash
+litellm --port 18341 --drop_params --config {litellm_proxy_config_file}
 ```
 
 ### Prepare Data
@@ -48,7 +82,11 @@ cd web & npm install
 npm run dev
 ```
 
-Open the browser and visit http://localhost:3000
+Open the browser and visit [](http://localhost:3000)
+
+Set the Database/Sqlite path to DB-GPT-Lite/pilot/data/default_sqlite.db and start a new chat from "Chat Data"
+
+Create a new knowledge and start a new chat from "Chat Knowledge".
 
 # DB-GPT: Revolutionizing Database Interactions with Private LLM Technology
 <p align="left">
