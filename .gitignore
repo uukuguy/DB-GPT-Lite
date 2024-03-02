@@ -7,7 +7,7 @@ __pycache__/
 *.so
 message/
 dbgpt/util/extensions/
-#.env*
+.env*
 .vscode
 .idea
 .chroma
@@ -174,7 +174,7 @@ thirdparty
 
 # local env files
 /web/.env.prod
-#/web/.env
+/web/.env
 
 # typescript
 *.tsbuildinfo
