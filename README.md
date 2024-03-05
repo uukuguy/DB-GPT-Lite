@@ -14,7 +14,7 @@ export OPENAI_API_KEY="sk-xxxxx"
 ### Install
 
 ```bash
-git clone https://github.com/uukuguy/DB-GPT-Lite.git && cd DB-GPT_Lite
+git clone https://github.com/uukuguy/DB-GPT-Lite.git && cd DB-GPT-Lite
 pip install -v -e ".[openai]"
 ```
 
